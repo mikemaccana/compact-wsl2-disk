@@ -2,7 +2,7 @@
 
 ## A small script for Windows 10 Home users to compact their WSL2 disks
 
-Inspired by [this post on GitHub about WSL2 filling hard disks](https://github.com/microsoft/WSL/issues/4699#issuecomment-627133168).
+Inspired by [this post on GitHub about WSL2 filling hard disks](https://github.com/microsoft/WSL/issues/4699#issuecomment-627133168). This script will:
 
  - Find your `vhdx` file 
  - Shut down WSL2
