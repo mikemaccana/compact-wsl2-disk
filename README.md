@@ -2,10 +2,10 @@
 
 ## A small script for Windows 10 Home users to compact their WSL2 disks
 
-Inspired by this post on [GitHub](https://github.com/microsoft/WSL/issues/4699#issuecomment-627133168).
+Inspired by [this post on GitHub about WSL2 filling hard disks](https://github.com/microsoft/WSL/issues/4699#issuecomment-627133168).
 
  - Find your `vhdx` file 
- - Shutting down WSL2
+ - Shut down WSL2
  - Compact the disk with diskpart
  
 After that just open another Linux termnal and WSL2 will restart automatically.
