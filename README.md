@@ -1,4 +1,4 @@
-# WSL2 Compacter
+# WSL2 Compacter 🗜
 
 ## A small script for Windows 10 Home users to compact their WSL2 disks
 
