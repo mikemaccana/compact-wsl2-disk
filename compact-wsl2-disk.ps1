@@ -1,5 +1,3 @@
-#C:\WSL-Distros\…\ext4.vhdx
-
 $ErrorActionPreference = "Stop"
 
 # File is normally under something like C:\Users\onoma\AppData\Local\Packages\CanonicalGroupLimited...
