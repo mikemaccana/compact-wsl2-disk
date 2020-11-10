@@ -18,6 +18,10 @@ Inspired by this post on [GitHub](https://github.com/microsoft/WSL/issues/4699#i
 
 Please file tickets instead of just asking forthings. Thanks!
 
+## License
+
+MIT
+
 ## Thanks
 
 [This person on StackOverflow](https://stackoverflow.com/questions/64772243/can-diskpart-take-command-line-parameters-or-can-i-fake-them-with-powershell)
