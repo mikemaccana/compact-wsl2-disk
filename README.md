@@ -4,6 +4,12 @@
 
 Inspired by this post on [GitHub](https://github.com/microsoft/WSL/issues/4699#issuecomment-627133168).
 
+ - Find your `vhdx` file 
+ - Shutting down WSL2
+ - Compact the disk with diskpart
+ 
+After that just open another Linux termnal and WSL2 will restart automatically.
+
 ## Warning
 
 1. I am a strange man on the internet asking you to run a powershell script. You should probably look inside the script [`compact-wsl2-disk.ps1`](compact-wsl2-disk.ps1) and make sure you understand what it does.
