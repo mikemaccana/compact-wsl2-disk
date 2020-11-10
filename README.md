@@ -12,6 +12,8 @@ Inspired by this post on [GitHub](https://github.com/microsoft/WSL/issues/4699#i
 
 ## Usage
 
+Open Powershell as Administrator and run:
+
 `powershell.exe .\compact-wsl2-disk.ps1`
 
 ## PRs are welcome!
