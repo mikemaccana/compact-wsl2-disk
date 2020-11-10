@@ -16,7 +16,7 @@ Inspired by this post on [GitHub](https://github.com/microsoft/WSL/issues/4699#i
 
 ## PRs are welcome!
 
-Please file tickets instead of just asking forthings. Thanks!
+Please file tickets instead of just asking for things. Thanks!
 
 ## License
 
