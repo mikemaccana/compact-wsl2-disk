@@ -20,6 +20,9 @@ $disk = $files[0].FullName
 
 write-output " - Successfully found VHDX file $disk"
 write-output " - Shutting down WSL2"
+
+# See https://github.com/microsoft/WSL/issues/4699#issuecomment-722547552
+wsl -e sudo fstrim /
 wsl --shutdown
 write-output " - Compacting disk (starting diskpart)"
 
