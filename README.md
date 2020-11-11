@@ -24,7 +24,7 @@ Open Powershell as Administrator and run:
 
 ## PRs are welcome!
 
-Please file tickets instead of just asking for things. Thanks!
+Please file pull requests instead of just asking for things. Thanks!
 
 ## License
 
