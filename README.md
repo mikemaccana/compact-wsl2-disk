@@ -32,4 +32,4 @@ MIT
 
 ## Thanks
 
-[This person on StackOverflow](https://stackoverflow.com/questions/64772243/can-diskpart-take-command-line-parameters-or-can-i-fake-them-with-powershell)
+[This person on StackOverflow](https://stackoverflow.com/questions/64772243/can-diskpart-take-command-line-parameters-or-can-i-fake-them-with-powershell) and [everyone on the WSL GitHub](https://github.com/microsoft/WSL/issues/4699)
