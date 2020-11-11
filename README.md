@@ -8,7 +8,7 @@ Inspired by [this post on GitHub about WSL2 filling hard disks](https://github.c
  - Shut down WSL2
  - Compact the disk with diskpart
  
-After that just open another Linux termnal and WSL2 will restart automatically.
+After that just open another Linux terminal and WSL2 will restart automatically.
 
 ## Warning
 
