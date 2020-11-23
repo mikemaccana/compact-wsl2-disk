@@ -7,24 +7,27 @@ get-childitem -recurse -filter "ext4.vhdx" -ErrorAction SilentlyContinue | forea
   $files += ${PSItem}
 }
 
-if ( $files.count -gt 1 ) {
-  throw "We found too many files in $env:LOCALAPPDATA\Packages"
+# Docker wsl2 vhdx files
+cd $env:LOCALAPPDATA\Docker
+get-childitem -recurse -filter "ext4.vhdx" -ErrorAction SilentlyContinue | foreach-object {
+  $files += ${PSItem}
 }
 
 if ( $files.count -eq 0 ) {
-  throw "We could not find a file called ext4.vhdx in $env:LOCALAPPDATA\Packages"
+  throw "We could not find a file called ext4.vhdx in $env:LOCALAPPDATA\Packages or $env:LOCALAPPDATA\Docker"
 }
 
-$disk = $files[0].FullName
-
-
-write-output " - Successfully found VHDX file $disk"
+write-output " - Found $($files.count) VHDX file(s)"
 write-output " - Shutting down WSL2"
 
 # See https://github.com/microsoft/WSL/issues/4699#issuecomment-722547552
 wsl -e sudo fstrim /
 wsl --shutdown
-write-output " - Compacting disk (starting diskpart)"
+
+foreach ($file in $files) {
+	$disk = $file.FullName
+	
+	write-output " - Compacting disk (starting diskpart)"
 
 @"
 select vdisk file=$disk
@@ -34,5 +37,6 @@ detach vdisk
 exit
 "@ | diskpart
 
-write-output ""
-write-output "Success. Compacted $disk."
+	write-output ""
+	write-output "Success. Compacted $disk."
+}
