@@ -26,8 +26,10 @@ wsl --shutdown
 
 foreach ($file in $files) {
 	$disk = $file.FullName
-	
-	write-output " - Compacting disk (starting diskpart)"
+	write-output "-----"
+	write-output "Disk to compact: $($disk)"
+	write-output "Length: $($file.Length/1MB) MB"
+	write-output "Compacting disk (starting diskpart)"
 
 @"
 select vdisk file=$disk
@@ -39,4 +41,8 @@ exit
 
 	write-output ""
 	write-output "Success. Compacted $disk."
+	write-output "New length: $((Get-Item $disk).Length/1MB) MB"
+
 }
+write-output "======="
+write-output "Compacting of $($files.count) file(s) complete"
