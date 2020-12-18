@@ -2,13 +2,13 @@ $ErrorActionPreference = "Stop"
 
 # File is normally under something like C:\Users\onoma\AppData\Local\Packages\CanonicalGroupLimited...
 $files = @()
-cd $env:LOCALAPPDATA\Packages
+Set-Location $env:LOCALAPPDATA\Packages
 get-childitem -recurse -filter "ext4.vhdx" -ErrorAction SilentlyContinue | foreach-object {
   $files += ${PSItem}
 }
 
 # Docker wsl2 vhdx files
-cd $env:LOCALAPPDATA\Docker
+Set-Location $env:LOCALAPPDATA\Docker
 get-childitem -recurse -filter "ext4.vhdx" -ErrorAction SilentlyContinue | foreach-object {
   $files += ${PSItem}
 }
