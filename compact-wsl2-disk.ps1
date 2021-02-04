@@ -2,13 +2,13 @@ $ErrorActionPreference = "Stop"
 
 # File is normally under something like C:\Users\onoma\AppData\Local\Packages\CanonicalGroupLimited...
 $files = @()
-cd $env:LOCALAPPDATA\Packages
+pushd $env:LOCALAPPDATA\Packages
 get-childitem -recurse -filter "ext4.vhdx" -ErrorAction SilentlyContinue | foreach-object {
   $files += ${PSItem}
 }
 
 # Docker wsl2 vhdx files
-cd $env:LOCALAPPDATA\Docker
+pushd $env:LOCALAPPDATA\Docker
 get-childitem -recurse -filter "ext4.vhdx" -ErrorAction SilentlyContinue | foreach-object {
   $files += ${PSItem}
 }
@@ -30,7 +30,7 @@ foreach ($file in $files) {
 	write-output " - Compacting disk (starting diskpart)"
 
 @"
-select vdisk file=$disk
+select vdisk file="$disk"
 attach vdisk readonly
 compact vdisk
 detach vdisk
@@ -40,3 +40,6 @@ exit
 	write-output ""
 	write-output "Success. Compacted $disk."
 }
+
+popd
+popd
