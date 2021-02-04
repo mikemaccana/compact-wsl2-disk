@@ -29,7 +29,7 @@ foreach ($file in $files) {
 	
 	write-output " - Compacting disk (starting diskpart)"
 
-@"
+	@"
 select vdisk file="$disk"
 attach vdisk readonly
 compact vdisk
