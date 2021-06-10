@@ -7,6 +7,9 @@ Inspired by [this post on GitHub about WSL2 filling hard disks](https://github.c
  - Find your `vhdx` file(s) in the default paths of 
      * WSL2 distros (`C:\Users\<NAME>\AppData\Local\Packages\CanonicalGroupLimited...`)
      * Docker WSL2 distros (`C:\Users\<NAME>\AppData\Local\Docker`)
+     * Any other folder defined via the `WSL_FOLDERS` environment variable.
+       For having multiple directories, format it as `$PATH`, as in:
+       `C:\PATH\TO\FOLDER1;D:\PATH\TO\FOLDER2;...`
  - Shut down WSL2
  - Compact all found disks with [`diskpart`](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/diskpart)
  
