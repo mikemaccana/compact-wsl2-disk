@@ -7,7 +7,9 @@ $wsl_folders = @(
     # WSL OSes from the Windows Store
     "$env:LOCALAPPDATA\Packages",
     # The Docker WSL files
-    "$env:LOCALAPPDATA\Docker"
+    "$env:LOCALAPPDATA\Docker",
+    # Rancher Desktop files
+    "$env:LOCALAPPDATA\rancher-desktop"
 )
 # Allow user definitions via an environment variable, WSL_FOLDERS
 if (Test-Path env:WSL_FOLDERS) {
