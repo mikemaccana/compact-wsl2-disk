@@ -45,14 +45,17 @@ foreach ($file in $files) {
 	write-output "Length: $($file.Length/1MB) MB"
 	write-output "Compacting disk (starting diskpart)"
 
+  $diskpartCommandsFile = New-TemporaryFile
 @"
 select vdisk file=$disk
 attach vdisk readonly
 compact vdisk
 detach vdisk
 exit
-"@ | diskpart
-
+"@ | Out-File -FilePath $diskpartCommandsFile
+    diskpart /s $diskpartCommandsFile
+    Remove-Item $diskpartCommandsFile
+    
 	write-output ""
 	write-output "Success. Compacted $disk."
 	write-output "New length: $((Get-Item $disk).Length/1MB) MB"
